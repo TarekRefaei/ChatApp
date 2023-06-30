@@ -96,18 +96,18 @@ fun ChatScreen(
                                 val triangleWidth = 25.dp.toPx()
                                 val trianglePath = Path().apply {
                                     if (isOwnUsername) {
-                                        moveTo(x = size.width, y = size.height - cornerRadius)
-                                        lineTo(x = size.width, y = size.height + triangleHeight)
-                                        lineTo(
-                                            x = size.width - triangleWidth,
-                                            y = size.height - cornerRadius
-                                        )
-                                        close()
-                                    } else {
                                         moveTo(x = 0f, y = size.height - cornerRadius)
                                         lineTo(x = 0f, y = size.height + triangleHeight)
                                         lineTo(
                                             x = triangleWidth,
+                                            y = size.height - cornerRadius
+                                        )
+                                        close()
+                                    } else {
+                                        moveTo(x = size.width, y = size.height - cornerRadius)
+                                        lineTo(x = size.width, y = size.height + triangleHeight)
+                                        lineTo(
+                                            x = size.width - triangleWidth,
                                             y = size.height - cornerRadius
                                         )
                                         close()
@@ -140,6 +140,7 @@ fun ChatScreen(
                         )
                     }
                 }
+                Spacer(modifier = Modifier.height(25.dp))
             }
         }
 
